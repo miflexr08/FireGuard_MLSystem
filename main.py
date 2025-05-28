@@ -28,7 +28,7 @@ class Perceptron():
         self.alpha = 0.01
 
         self.current_error = 0
-        self.bigger_error_times = 0
+        self.error_increases = 0
     
 
     def make_prediction(self):
@@ -40,40 +40,45 @@ class Perceptron():
             if delta_error <= self.error_limit:
                 return 1
 
-            delta_error = prediction - self.fire_propagation_chance
-            if delta_error > self.current_error:
-                self.bigger_error_times += 1
-                if self.bigger_error_times == 3:
+            if abs(delta_error) > self.current_error:
+                if (self.error_increases + 1) == 3:
+                    print(f"error increases: {self.error_increases}")
                     raise Exception("Error is growing...")
+                
+                self.error_increases += 1
 
-            mean_squared_error = delta_error ** 2
-            
+            mean_squared_error = delta_error ** 2            
             print(f"Mean squared error: {mean_squared_error}")
             # What is Mean squared error?
             """
             Mean squared error Explanation:
-            
+
             """
 
-            # A new vector with the derivatives 
+            # A New Vector Containing Derivatives 
             derivatives = np.multiply(self.inputs, delta_error)
-
             print(f"derivatives: {derivatives}")
+            # What is a Derivative?
+            """
+            Derivative Explanation:
+
+            """
 
             new_weights = self.weights - derivatives
-
+            print(f"self.weights: {self.weights}")
             print(f"new_weights: {new_weights}")
 
             self.weights = new_weights
-
             self.make_prediction()
 
         except e:
             print(f"Error: {e}")
+            return 0
 
 
-        
-
+# How To Generate the Weights
+perceptron = Perceptron(named_inputs.values(), list(), fire_propagation_chance)
+result = perceptron.make_prediction()
 
 
     
