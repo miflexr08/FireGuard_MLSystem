@@ -4,6 +4,7 @@
 # Create a domain class to encapsulate the Perceptron
 # Create Doc about criterias for fire propagation (more technical)
 
+
 import numpy as np 
 
 named_inputs = { "temperature": 29.0, "air humidity": 0.28, "wind speed": 14.8, "slope": 0.12 }
@@ -18,7 +19,7 @@ fire_propagation_chance = 0.21 # that's the goal
 
 class Perceptron():
 
-    def __super__(inputs, initial_weights, goal):
+    def __super__(self, inputs, initial_weights, goal):
         print("Initializing Perceptron ")
 
         self.inputs = np.array(inputs)
