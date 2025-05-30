@@ -4,8 +4,7 @@
 # Create a domain class to encapsulate the Perceptron
 # Create Doc about criterias for fire propagation (more technical)
 
-
-import numpy as np 
+import numpy as np
 
 named_inputs = { "temperature": 29.0, "air humidity": 0.28, "wind speed": 14.8, "slope": 0.12 }
 
