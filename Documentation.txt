@@ -1,0 +1,6 @@
+Mean squared error Explanation:
+
+
+
+Derivative Explanation:
+

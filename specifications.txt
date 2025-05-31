@@ -1,0 +1,3 @@
+0 - Test weights and results
+1 - Implement alpha (observe behavior before implement it)
+2 - Create Doc about criterias for fire propagation (more technical)
