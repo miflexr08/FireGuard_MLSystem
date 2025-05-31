@@ -1,4 +1,5 @@
 from perceptron import Perceptron
+from severity import Severity
 
 # Heritage from a Generic Class (specialized classes for different purposes)
 class FireGuardMLSystem:
@@ -21,7 +22,7 @@ class FireGuardMLSystem:
             - Terrain slope: {self._slope}\n\n\n
         """)
 
-    def classify_fire_severity(self):
+    def classify_fire_severity(self) -> Severity:
         severity = self.perceptron.make_prediction()
-
         print(f"severity: {severity}")
+        return Severity.CRITICAL
