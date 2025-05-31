@@ -57,7 +57,9 @@ class Perceptron:
 
         """
 
-        new_weights = self.weights - derivatives
+        adjusted_derivatives = derivatives * self.alpha
+        print(f"adjusted derivatives: {adjusted_derivatives}")
+        new_weights = self.weights - adjusted_derivatives
         print(f"self.weights: {self.weights}")
         print(f"new_weights: {new_weights}")
 

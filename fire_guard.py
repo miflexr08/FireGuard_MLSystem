@@ -13,7 +13,7 @@ class FireGuardMLSystem:
         self._slope = 0.12
 
         self.perceptron = Perceptron([self._temperature, self._air_humidity, self._wind_speed, self._slope],
-                                     [2.0, 0.6, .45, .21], 0.21)
+                                     [2.0, 0.6, .45, .21], 0.21, 0.02, 0.001)
 
         print(f""""
             - Temperature: {self._temperature}\n
