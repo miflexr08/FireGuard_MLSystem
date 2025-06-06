@@ -13,7 +13,7 @@ class Perceptron:
         self.current_error = 0
 
 
-    def make_prediction(self) -> str | None:
+    def make_prediction(self) -> tuple | None:
 
         assert len(self.inputs) == len(self.weights)
 
@@ -23,14 +23,7 @@ class Perceptron:
         print(f"delta_error: {self.current_error}")
 
         if abs(delta_error) <= self.error_limit:
-            print("\n\n")
-            print("-----------------------------")
-
-            print(f"Right Weights: {self.weights}")
-            print(f"Right prediction: {prediction}")
-
-            print("-----------------------------")
-            return "System Balanced"
+            return (prediction, self.weights)
 
         print(f"Prediction: {prediction}")
         if abs(delta_error) > self.current_error:
